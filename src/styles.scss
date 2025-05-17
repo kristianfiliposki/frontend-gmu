@@ -1,2 +1,18 @@
 @import 'bootstrap/scss/bootstrap';
 @import url("./classes/mainClasses.scss");
+
+.sidebar-size{
+  height: 10% !important;
+}
+
+.overflow-x-container{
+  overflow-x: auto;
+  width: 750px;
+}
+
+
+@media (min-width: 992px) {
+  .sidebar-size{
+    height: 99% !important;
+  }
+ }

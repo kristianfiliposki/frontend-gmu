@@ -11,18 +11,42 @@
 
 
 /* weight */
-.w-85{width: 85%;}
-.w-15{width: 15%;}
+.w-99{width: 99%;}
 .w-95{width: 95%;}
+.w-85{width: 85%;}
+.w-75{width: 75%;}
+.w-45{width: 45%;}
+.w-35{width: 35%;}
+.w-25{width: 25%;}
+.w-15{width: 15%;}
 
 /* height */
+.h-99{height: 99%;}
 .h-95{height: 95%;}
 .h-85{height: 85%;}
+.h-75{height: 75%;}
+.h-45{height: 45%;}
+.h-35{height: 35%;}
+.h-25{height: 25%;}
 .h-15{height: 15%;}
-.h-95{height: 95%;}
 
 
 /* border */
 .border-primary{border: 1px solid #0d6efd;}
-.border-secondary{border: 10px solid rgba(162, 160, 160, 0.942);}
+.border-botton-primary{border-bottom: 1px solid #0d6efd; ;}
+.border-top-primary{border-top: 1px solid #0d6efd; ;}
+.border-right-primary{border-right: 1px solid #0d6efd; ;}
+.border-left-primary{border-left: 1px solid #0d6efd; ;}
 
+
+.border-secondary{border: 1px solid #E4E4E4;}
+.border-botton-primary{border-bottom: 1px solid #E4E4E4; ;}
+.border-top-primary{border-top: 1px solid #E4E4E4; ;}
+.border-right-primary{border-right: 1px solid #E4E4E4; ;}
+.border-left-primary{border-left: 1px solid #E4E4E4; ;}
+
+
+
+
+/* backgrount */
+.bg-wrapper{background-color: #E4E4E4;}
