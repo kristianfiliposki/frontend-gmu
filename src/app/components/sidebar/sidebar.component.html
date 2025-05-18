@@ -1,14 +1,19 @@
 <body class="h-100 w-100 rounded d-flex justify-content-center">
   <div class="rounded bg-light m-2 w-100">
-    <div class=" border-botton-primary py-2 px-4  text-center d-flex justify-content-start align-items-center">
-      <h5 class="fw-bold mb-4">Global Money Index</h5>
-    </div>
-    <ul class="nav flex-column">
-      <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Analytics</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Docs</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Contributors</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Careers</a></li>
-    </ul>
+    <div class="h-85">
+      <div class=" border-botton-primary py-2 px-4  text-center d-flex justify-content-start align-items-center">
+        <h5 class="fw-bold mb-4">Global Money Index</h5>
+      </div>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Analytics</a></li>
 
+        <li class="nav-item mb-2"><a class="nav-link text-dark" [routerLink]="['/docs']" routerLinkActive="router-link-active" >Docs</a></li>
+        <li class="nav-item mb-2"><a class="nav-link text-dark" [routerLink]="['/contributors']" routerLinkActive="router-link-active" >Contributors</a></li>
+        <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <hr>
+    <div class=" d-flex justify-content-center align-items-center">Global crypto</div>
   </div>
 </body>

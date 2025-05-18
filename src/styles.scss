@@ -1,13 +1,18 @@
 @import 'bootstrap/scss/bootstrap';
 @import url("./classes/mainClasses.scss");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 .sidebar-size{
   height: 10% !important;
 }
 
-.overflow-x-container{
-  overflow-x: auto;
-  width: 750px;
+* {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 

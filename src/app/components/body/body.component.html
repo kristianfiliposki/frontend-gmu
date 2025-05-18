@@ -1,48 +1,77 @@
 <!-- app-body.component.html -->
-<div class="h-100 w-100 bg-light fs-1">
+<div class="h-100 w-100 bg-light px-3 py-4">
 
   <!-- Box grafico -->
-  <div class="p-2 m-0  w-100">
-      <section class="mb-4 h-100">
-        <div class="h-100 card shadow-sm p-4">
-          <h5 class="card-title">Spending Overview</h5>
-          <div class="chart-placeholder h-100 bg-secondary-subtle text-center py-5 rounded">[Grafico qui]</div>
-        </div>
-      </section>
+  <div class="mb-4">
+    <div class="card shadow-sm p-3">
+      <h5 class="mb-3 fw-semibold">GMU Index</h5>
+      <div class="rounded chart-placeholder bg-secondary-subtle text-center py-4">
+        <app-chart></app-chart>
+      </div>
+    </div>
   </div>
 
-  <!-- Card centrata -->
-  <div class="col-12 d-flex justify-content-center">
-    <!-- Stat Boxes -->
-    <section class=" d-flex justify-content-center">
-      <div class="w-95 d-flex justify-content-center">
-        <div class="c mx-2">
+  <!-- Cards area -->
+  <div class="row gy-4">
 
-          <div class="card shadow-sm p-3">
+    <!-- Stat Card -->
+    <div class="col-12 col-md-6 col-xl-4">
+      <div class="card shadow-sm p-3">
 
-            <h6 class="text-muted">Avarage_Price</h6>
-            <h3 class="text-truncate">0,0212758889443078</h3>
-            <div class="progress" style="height: 5px;">
+        <div class="mb-3">
+          <h6 class="text-muted mb-1">Average Price</h6>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-semibold text-primary fs-6" title="0,0212758889443078">0.02127</span>
+            <div class="progress flex-grow-1 ms-2" style="height: 6px;">
               <div class="progress-bar bg-primary" style="width: 30%"></div>
             </div>
+          </div>
+        </div>
 
-            <h6 class="text-muted">Max Price</h6>
-            <h3>0,0780000937107493</h3>
-            <div class="progress" style="height: 5px;">
+        <div class="mb-3">
+          <h6 class="text-muted mb-1">Max Price</h6>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-semibold text-success fs-6" title="0,0780000937107493">0.07800</span>
+            <div class="progress flex-grow-1 ms-2" style="height: 6px;">
               <div class="progress-bar bg-success" style="width: 75%"></div>
             </div>
-
-            <h6 class="text-muted">Min Price</h6>
-            <h3 class="text-truncate">0,00236782068882726</h3>
-            <div class="progress" style="height: 5px;">
-              <div class="progress-bar bg-danger" style="width: 50%"></div>
-            </div>
-
           </div>
+        </div>
 
+        <div>
+          <h6 class="text-muted mb-1">Min Price</h6>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-semibold text-danger fs-6" title="0,00236782068882726">0.00236</span>
+            <div class="progress flex-grow-1 ms-2" style="height: 6px;">
+              <div class="progress-bar bg-danger" style="width: 15%"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA Card -->
+    <div class="col-12 col-md-6 col-xl-4">
+      <div class="card shadow-sm p-3 text-center d-flex flex-column justify-content-around h-100">
+        <div>
+          <h5 class="fw-bold mb-2">Become a Founder</h5>
+          <p class=" mb-1  fs-6 text-muted">You can transform the global economy!</p>
+        </div>
+        <a class="  p-2 d-flex justify-content-center align-items-center btn btn-success fw-bold fs-4 rounded-pill text-light" [routerLink]="['/contributors']" routerLinkActive="router-link-active" >BUY YOUR TOKENS</a>
+      </div>
+    </div>
+
+    <!-- Exchange Rate Card -->
+    <div class="col-12 col-md-6 col-xl-4">
+      <div class="card shadow-sm p-3 text-center">
+        <h6 class="text-muted mb-2">Average Exchange Rates</h6>
+        <h4 class="text-success fw-bold mb-3">273,187,111</h4>
+        <div class="progress" style="height: 6px;">
+          <div class="progress-bar bg-success" style="width: 75%"></div>
         </div>
       </div>
-    </section>
     </div>
-</div>
 
+  </div>
+</div>
