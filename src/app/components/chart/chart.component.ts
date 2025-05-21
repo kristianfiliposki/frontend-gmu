@@ -51,7 +51,7 @@ export class ChartComponent {
         }],
         chart: {
           type: 'line',
-          height: 350,
+          height: 250,
           zoom: {
             enabled: true
           }
