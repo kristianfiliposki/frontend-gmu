@@ -65,8 +65,8 @@
     <!-- Exchange Rate Card -->
     <div class="col-12 col-md-6 col-xl-4">
       <div class="card shadow-sm p-3 text-center">
-        <h6 class="text-muted mb-2">Average Exchange Rates</h6>
-        <h4 class="text-success fw-bold mb-3">273,187,111</h4>
+        <h6 class="text-muted mb-2">LastPrice</h6>
+        <h4 class="text-success fw-bold mb-3 text-truncate">{{(lastprice$ | async)}}</h4>
         <div class="progress" style="height: 6px;">
           <div class="progress-bar bg-success" style="width: 75%"></div>
         </div>

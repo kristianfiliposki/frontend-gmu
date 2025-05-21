@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SidebarComponent } from '../components/sidebar/sidebar.component';
-import { BodyComponent } from '../components/body/body.component';
+import { SidebarComponent } from '../sidebar/sidebar.component';
+import { BodyComponent } from '../body/body.component';
 
 @Component({
   selector: 'app-main',

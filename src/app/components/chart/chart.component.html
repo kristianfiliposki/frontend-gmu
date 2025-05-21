@@ -1,11 +1,13 @@
 <div class="h-75 w-100">
-  <apx-chart
-    *ngIf="chartOptions.series && chartOptions.chart && chartOptions.xaxis && chartOptions.title"
-    #chart
-    [series]="chartOptions.series"
-    [chart]="chartOptions.chart"
-    [xaxis]="chartOptions.xaxis"
-    [title]="chartOptions.title">
-  </apx-chart>
+<!-- gmu-chart.component.html -->
+<apx-chart
+  [series]="chartOptions?.series!"
+  [chart]="chartOptions?.chart!"
+  [xaxis]="chartOptions?.xaxis!"
+  [yaxis]="chartOptions?.yaxis!"
+  [tooltip]="chartOptions?.tooltip!"
+  [title]="chartOptions?.title!">
+</apx-chart>
+
 
 </div>

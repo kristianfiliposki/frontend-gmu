@@ -1,21 +1,18 @@
 import { Component, ViewChild } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgApexchartsModule } from 'ng-apexcharts';
-import {
-  ChartComponent as ApexChartComponent,
-  ApexAxisChartSeries,
-  ApexChart,
-  ApexXAxis,
-  ApexTitleSubtitle
-} from "ng-apexcharts";
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgApexchartsModule, ApexAxisChartSeries, ApexChart, ApexXAxis, ApexYAxis, ApexTitleSubtitle, ApexTooltip } from 'ng-apexcharts';
+import { Store } from '@ngrx/store';
+import { loadGmuData5m } from '../../store/gmu.actions';
+import { selectGmuData } from '../../store/gmu.selector';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
   xaxis: ApexXAxis;
+  yaxis: ApexYAxis;
   title: ApexTitleSubtitle;
+  tooltip: ApexTooltip;
 };
 
 @Component({
@@ -30,28 +27,55 @@ export type ChartOptions = {
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
-export class chart {
-  @ViewChild("chart") chart!: ApexChartComponent;
-  public chartOptions: Partial<ChartOptions>;
+export class ChartComponent {
+  @ViewChild("chart") chart!: ChartComponent;
+  public chartOptions?: Partial<ChartOptions>;
 
-  constructor() {
-    this.chartOptions = {
-      series: [
-        {
-          name: "My-series",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+  constructor(private store: Store) {}
+
+  ngOnInit() {
+    this.store.dispatch(loadGmuData5m());
+
+    this.store.select(selectGmuData).subscribe((data) => {
+      if (!data) return;
+
+      const seriesData = data.map(item => ({
+        x: new Date(item.timestamp),
+        y: item.gmu_value
+      }));
+
+      this.chartOptions = {
+        series: [{
+          name: 'GMU Value',
+          data: seriesData
+        }],
+        chart: {
+          type: 'line',
+          height: 350,
+          zoom: {
+            enabled: true
+          }
+        },
+        xaxis: {
+          type: 'datetime',
+          labels: {
+            format: 'HH:mm'
+          }
+        },
+        yaxis: {
+          title: {
+            text: 'GMU Value'
+          }
+        },
+        tooltip: {
+          x: {
+            format: 'yyyy-MM-dd HH:mm:ss'
+          }
+        },
+        title: {
+          text: 'GMU Data Over Time'
         }
-      ],
-      chart: {
-        height: 250,
-        type: "area"
-      },
-      title: {
-        text: "Gmu Index"
-      },
-      xaxis: {
-        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
-      }
-    };
+      };
+    });
   }
 }
