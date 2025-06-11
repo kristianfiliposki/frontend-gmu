@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { GmuService } from "../service/gmu.service";
-import { loadGmuData5m, loadGmuDataFailure5m, loadGmuDataSuccess5m, loadLastPriceSuccess} from './gmu.actions';
+import { loadGmuData5m, loadGmuDataFailure5m, loadGmuDataSuccess5m, loadLastPrice, loadLastPriceFailure, loadLastPriceSuccess} from './gmu.actions';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of, pipe } from 'rxjs';
 
@@ -21,11 +21,11 @@ export class GmuEffects {
 
   loadLastPrice$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(loadGmuData5m),
+      ofType(loadLastPrice),
       mergeMap(() =>
         this.gmuService.getGmu().pipe(
           map(price => loadLastPriceSuccess({ price })),
-          catchError(error => of(loadGmuDataFailure5m({ error })))
+          catchError(error => of(loadLastPriceFailure({ error })))
         )
       )
     )

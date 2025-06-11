@@ -56,10 +56,11 @@ export class ChartComponent {
             enabled: true
           }
         },
+
         xaxis: {
           type: 'datetime',
           labels: {
-            format: 'HH:mm'
+            format: 'yyyy-MM-dd'
           }
         },
         yaxis: {
