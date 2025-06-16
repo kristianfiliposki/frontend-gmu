@@ -1,11 +1,72 @@
-<div class="bg-wrapper w-100 vh-100 d-flex row  mx-0">
-    <!-- sidebar -->
+<!-- <div class="bg-wrapper w-100  d-flex row  mx-0">
     <div class="p-2 sidebar-size col-12 col-lg-2">
        <app-sidebar></app-sidebar>
     </div>
     <div class="p-2 vh-99 overflow-auto rounded col-12 col-lg-10 ">
-      <!-- app -->
       <app-body></app-body>
     </div>
-</div>
+</div> -->
 
+
+<div class="m-3 mx-0 p-0 bg-black w-100  d-flex row ">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="w-85  ">
+
+      <div class="m-3 row">
+        <div class="col-12 col-xl-5">
+          <h2 class="text-light text-center">GLOBAL MONEY VALUE</h2>
+          <p class="text-light text-center">
+            GMV is an index designed to compute a unified value across all fiat currencies, reserve assets such as gold, and emerging currencies like Bitcoin, factoring in the population actively using them.
+          </p>
+          <p class="text-light text-center">
+            CURRENT VALUE OF GMV:
+          </p>
+          <p class="text-center fs-2 tex-bold text-light"><strong class="text-truncate">{{(lastprice$ | async)}}</strong></p>
+        </div>
+        <div class="col-12 col-xl-7"><app-chart></app-chart></div>
+
+      </div>
+
+      <hr class="bg-light text-light">
+
+      <div class="m-3 row">
+        <h3 class="text-light tex-bold text-center ">The following mathematical formula of the GMV value is:</h3>
+
+        <div class="container py-4 text-white bg-dark rounded">
+
+
+          <h4  class="d-none d-lg-block py-4 mb-4 fs-2 d-lg-flex justify-content-center text-center">
+            <strong>GMU = </strong>
+            <span>
+              <sub>i=1</sub>∑<sup class="text-center">n</sup> (
+              <span>(FX<sub>i</sub> / μ) · (P<sub>i</sub> / ∑P) · S<sub>i</sub>)</span>
+            </span>
+          </h4>
+
+          <div  class="d-block d-lg-none bold py-4 mb-4  d-flex justify-content-center text-center">
+            <strong>GMU = </strong>
+            <span>
+              <sub>i=1</sub>∑<sup class="text-center">n</sup> (
+              <span>(FX<sub>i</sub> / μ) · (P<sub>i</sub> / ∑P) · S<sub>i</sub>)</span>
+            </span>
+          </div>
+
+
+          <p><strong>This section includes the global currencies as well as:</strong></p>
+          <ul class="ps-3">
+            <li><code class="text-light">FX<sub>btc</sub></code> = The price of Bitcoin in USD</li>
+            <li><code class="text-light">FX<sub>gold</sub></code> = The price of gold in USD per standard unit (i.d. ounce)</li>
+            <li><code class="text-light">P<sub>btc</sub></code> = The number of people who <strong>actively use BTC</strong> as a medium of exchange, store of value, or for payments</li>
+            <li><code class="text-light">P<sub>gold</sub></code> = The population that <strong>holds physical or digital gold</strong> (e.g. 15–20 million worldwide)</li>
+            <li><code class="text-light">S<sub>btc</sub>, S<sub>gold</sub></code> = The estimated currency stability (i.d. 0.70 for BTC, 0.98 for gold)</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <hr class="bg-light text-light">
+
+    </div>
+  </div>
+</div>

@@ -53,30 +53,45 @@ export class ChartComponent {
           type: 'line',
           height: 250,
           zoom: {
-            enabled: true
-          }
+            enabled: false
+          },
+          foreColor: '#FFFFFF' // 👈 rende bianchi tutti i testi (default)
         },
-
         xaxis: {
           type: 'datetime',
           labels: {
-            format: 'yyyy-MM-dd'
+            style: {
+              colors: '#FFFFFF' // 👈 etichette asse X bianche
+            }
           }
         },
         yaxis: {
+          labels: {
+            style: {
+              colors: '#FFFFFF' // 👈 etichette asse Y bianche
+            }
+          },
           title: {
-            text: 'GMU Value'
+            text: 'GMU Value',
+            style: {
+              color: '#FFFFFF' // 👈 titolo asse Y bianco
+            }
           }
         },
         tooltip: {
           x: {
             format: 'yyyy-MM-dd HH:mm:ss'
-          }
+          },
+
         },
         title: {
-          text: 'GMU Data Over Time'
+          text: 'GMU Data Over Time',
+          style: {
+            color: '#FFFFFF' // 👈 titolo bianco
+          }
         }
       };
+
     });
   }
 }
